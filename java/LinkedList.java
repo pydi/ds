@@ -1,3 +1,4 @@
+/* Single Node in a LinkedList */
 class Node{
 	Node next = null;
 	int data;
