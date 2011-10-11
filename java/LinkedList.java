@@ -13,49 +13,59 @@ class Node{
 	}
 }
 
+/* class for Linked List */
 public class LinkedList{
-   Node head;
+  private Node head;
 
    public LinkedList(){
 	 this.head = null;
    }
 
-   public void appendLast(LinkedList list, int d){
+   public void appendLast(int d){
 	 Node n1 = new Node(d);
-     if(list.head == null){
-		 list.head = n1;
+     if(head == null){
+		 head = n1;
 		 return;
 	 }
      
-	 Node n = list.head;
+	 Node n = head;
 	 while(n.next != null){
 		  n = n.next;
 	 }
     n.next = n1;
   }
 
+  public void appendFirst(int d){
+	Node ele = new Node(d);	
+	Node temp = head;
+	head = ele;
+	ele.next = temp;
+  }
+
   public void display(){
-	Node list = this.head;
-    do{
+	Node list = head;
+    while(list.next!=null){
 		System.out.print(list.data + " -> ");
 	    list = list.next;
-	}while(list.next!=null);
+	}
     System.out.println( "null");
   }
 
+  public boolean isEmpty(){
+	  return head == null;
+  }
+
   public static void main(String[] args){
-   LinkedList list = new LinkedList();
-   System.out.println(" ***** Adding elemnts to list *****");
-   list.appendLast(list, 1);
-   list.appendLast(list, 2);
-   list.appendLast(list, 3);
-   list.appendLast(list, 4);
-   System.out.println("**** The Elements in Linked List are: ****");
-   if( list.head == null){
-	   System.out.println("the list is empty");
-   }else{
-		list.display();
-   }
+	   LinkedList list = new LinkedList();
+	   System.out.println(" ***** Adding elemnts to list *****");
+	   list.appendLast(1);
+	   list.appendLast(2);
+	   list.appendLast(3);
+	   list.appendLast(4);
+	   list.appendFirst(0);
+	   list.appendFirst(-1);
+	   System.out.println("**** The Elements in Linked List are: ****");
+	   list.display();  
   }
 
 }
