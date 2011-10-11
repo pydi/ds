@@ -51,6 +51,13 @@ public class LinkedList{
     System.out.println( "null");
   }
 
+  public Node find(int d){ return null;}
+
+  public void deleteNode(int d){}
+
+  public Node addNode(int index, int d){ return null;}
+
+
   public boolean isEmpty(){
 	  return head == null;
   }
